@@ -44,7 +44,7 @@
                 <!--Set the log base file size to trigger rolling log file updates if the size is exceeded-->
                 <SizeBasedTriggeringPolicy size="2048MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="25"/>
+            <DefaultRolloverStrategy fileIndex="nomax"/>
         </RollingFile>
 
         <!--Logs with a grade of info-->
@@ -61,7 +61,7 @@
                 <!--Set the log base file size to trigger rolling log file updates if the size is exceeded-->
                 <SizeBasedTriggeringPolicy size="2048MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="7">
+            <DefaultRolloverStrategy fileIndex="nomax">
                 <Delete basePath="${LOG_HOME}/history" maxDepth="1">
                     <IfFileName glob="*.log.gz"/>
                     <IfAny>
@@ -86,7 +86,7 @@
                 <!--Set the log base file size to trigger rolling log file updates if the size is exceeded-->
                 <SizeBasedTriggeringPolicy size="64MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="7"/>
+            <DefaultRolloverStrategy fileIndex="nomax"/>
         </RollingFile>
 
         <!--Logs for iceberg metrics report -->
@@ -99,7 +99,7 @@
             <Policies>
                 <SizeBasedTriggeringPolicy size="64MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="7"/>
+            <DefaultRolloverStrategy fileIndex="nomax"/>
         </RollingFile>
     </Appenders>
 
